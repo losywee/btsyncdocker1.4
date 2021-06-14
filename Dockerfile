@@ -6,7 +6,8 @@ LABEL com.getsync.version="1.4.111"
 RUN mkdir -p /opt/btsync
 COPY btsync /opt/btsync/btsync
 
-RUN mkdir -p /btsync/data && \
+RUN chmod +x /opt/btsync/btsync && \
+    mkdir -p /btsync/data && \
     mkdir -p /btsync/config && \
     ln -s /lib/ld-linux-armhf.so.3 /lib/ld-linux.so.3 && \
     mkdir -p /btsync/folders && \
